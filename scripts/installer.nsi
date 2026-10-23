@@ -5,7 +5,7 @@ VIAddVersionKey "ProductName" "Pulse Helper"
 VIAddVersionKey "ProductVersion" "0.1.2"
 VIAddVersionKey "FileVersion" "0.1.2"
 VIAddVersionKey "FileDescription" "Pulse native screen sharing helper"
-OutFile "../release/Pulse-Helper-Windows.exe"
+OutFile "..\release\Pulse-Helper-Windows.exe"
 InstallDir "$LOCALAPPDATA\Programs\Pulse Helper"
 RequestExecutionLevel user
 SetCompressor /SOLID lzma
@@ -15,7 +15,7 @@ UninstPage uninstConfirm
 UninstPage instfiles
 Section
 SetOutPath "$INSTDIR"
-File /r "../release/windows/*"
+File /r "..\release\windows\*"
 WriteRegStr HKCU "Software\Classes\pulse-capture" "" "URL:Pulse Capture"
 WriteRegStr HKCU "Software\Classes\pulse-capture" "URL Protocol" ""
 WriteRegStr HKCU "Software\Classes\pulse-capture\shell\open\command" "" '$\"$INSTDIR\pulse-media.exe$\" $\"%1$\"'
