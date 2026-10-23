@@ -1,0 +1,9 @@
+/native/target/
+/release/
+/dist/
+/resources/bin/
+.DS_Store
+.env
+.env.*
+__pycache__/
+*.pyc
