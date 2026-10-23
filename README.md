@@ -28,7 +28,7 @@ The distribution includes GStreamer and supporting open-source libraries. Licens
 
 ## Packaging and releases
 
-Windows: stage the runtime with `scripts/stage-windows.ps1`, prune unused DLLs with `python scripts/prune-windows.py`, and run `makensis installer.nsi` from `scripts/`. The installer is written to `release/Pulse-Helper-Windows.exe`. macOS packaging writes `release/Pulse-Helper-macOS-arm64.zip` and collects notices from the Homebrew libraries it bundles.
+Windows: stage the runtime with `scripts/stage-windows.ps1 -Runtime <GStreamer-root> -Binary <pulse-media.exe> -Output release/windows -VCRuntime <x64-Microsoft.VC143.CRT-directory>`. Use the redistributable CRT directory under Visual Studio Build Tools `VC/Redist/MSVC/<version>/x64/`; its DLLs are bundled beside the helper. Prune unused DLLs with `python scripts/prune-windows.py`, and run `makensis installer.nsi` from `scripts/`. The installer is written to `release/Pulse-Helper-Windows.exe`. macOS packaging writes `release/Pulse-Helper-macOS-arm64.zip` and collects notices from the Homebrew libraries it bundles.
 
 Upload both installers and a SHA-256 checksum file to a tagged GitHub release. Pulse links directly to this repository's Releases page; installers are not stored in the website source.
 
